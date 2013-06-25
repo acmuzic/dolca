@@ -1,0 +1,71 @@
+@charset "UTF-8";
+/* CSS Document */
+body
+{
+	background-color:#000;
+	margin:0;
+	padding:0;
+}
+
+
+/*------------- INDEX -------------*/
+#fondo
+{
+	top:0px;
+	left:0px;
+	width:1024px;
+	height:552px;
+	background:url(../imgs/fondo-madera.png) no-repeat;
+}
+
+#bienvenidos{
+	position:absolute;
+	top:0px;
+	left:0px;
+	width:1024px;
+	height:130px;
+	background:url(../imgs/bienvenidos.png) no-repeat;
+	z-index:5;
+	display:none;
+}
+
+#promo{
+	position:absolute;
+	top:-165px;
+	left:420px;
+	width:165px;
+	height:165px;
+	background:url(../imgs/promo-profesionales-redolca.png) no-repeat;
+	z-index:10;
+}
+
+#dolca{
+	position:absolute;
+	top:630px;
+	left:880px;
+	width:150px;
+	height:120px;
+	background:url(../imgs/logo-dolca.png) no-repeat;
+	z-index:15;
+}
+
+#cachorro{
+	position:absolute;
+	top:522px;
+	left:30px;
+	width:470px;
+	height:420px;
+	background:url(../imgs/elegir-cachorro.png) no-repeat;
+	z-index:20;
+}
+
+#penal{
+	position:absolute;
+	top:522px;
+	left:530px;
+	width:470px;
+	height:420px;
+	background:url(../imgs/elegir-penal.png) no-repeat;
+	z-index:25;
+}
+

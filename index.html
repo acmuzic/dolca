@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Dolca</title>
+<link rel="stylesheet" href="css/jquery.mobile-1.3.1.min.css" />
+<link href="css/estilos.css" rel="stylesheet" type="text/css">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="js/jquery-1.9.1.min.js"></script>
+<!--<script src="js/jquery.mobile-1.3.1.min.js"></script>-->
+<script type="text/javascript" charset="utf-8" src="cordova-2.7.0.js"></script>
+</head>
+<body>
+<div id="fondo">
+    <div id="bienvenidos"></div>
+    <div id="promo"></div>
+    <div id="dolca"></div>
+    <div id="cachorro"></div>
+    <div id="penal"></div>
+</div>
+</body>
+<script>
+$( document ).ready(function() {
+	$('#bienvenidos').slideDown('slow', function() {
+	// Animation complete.
+		$("#promo").animate({"top": "+=235px"}, "slow", function() {
+			$("#cachorro").animate({"top": "-=388px"}, "slow");
+			$("#penal").animate({"top": "-=388px"}, "slow");
+			$("#dolca").animate({"top": "-=200px"}, "slow");
+		});
+	});
+});
+
+$('#cachorro').click(function() {
+  $("body").fadeOut(500, function() {
+    // Animation complete.
+	window.location.href="cachorros.html";
+  });
+});
+
+$('#penal').click(function() {
+  $("body").fadeOut(500, function() {
+    // Animation complete.
+	window.location.href="penales.html";
+  });
+});
+</script>
+</html>
