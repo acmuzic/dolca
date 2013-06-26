@@ -8,7 +8,6 @@ body
 }
 
 
-/*------------- INDEX -------------*/
 #fondo
 {
 	top:0px;
@@ -25,6 +24,17 @@ body
 	width:1024px;
 	height:130px;
 	background:url(../imgs/bienvenidos.png) no-repeat;
+	z-index:5;
+	display:none;
+}
+
+#header{
+	position:absolute;
+	top:0px;
+	left:0px;
+	width:1024px;
+	height:130px;
+	background:url(../imgs/header.png) no-repeat;
 	z-index:5;
 	display:none;
 }
@@ -69,3 +79,13 @@ body
 	z-index:25;
 }
 
+
+#gracias{
+	position:absolute;
+	top:550px;
+	left:240px;
+	width:560px;
+	height:170px;
+	background:url(../imgs/gracias-por-participar.png) no-repeat;
+	z-index:40;
+}

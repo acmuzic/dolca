@@ -1,5 +1,4 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
-"http://www.w3.org/TR/html4/strict.dtd">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
 <head>
  
@@ -48,8 +47,7 @@ application
 -->
  
 <!-- Change this if you want to allow scaling -->
-   <meta name="viewport" content="width=default-width; user-
-scalable=no" />
+   <meta name="viewport" content="width=default-width; user-scalable=no" />
    <meta http-equiv="Content-type" content="text/html;charset=utf-8">
  
    <title>Embedded Sql Example</title>
@@ -156,8 +154,7 @@ function AddValueToDB() {
    return;
  }
  
-// this is the section that actually inserts the values into the User
-table
+// this is the section that actually inserts the values into the User table
  db.transaction(function(transaction) {
    transaction.executeSql('INSERT INTO User(FirstName, LastName) VALUES (?,?)',[$('#txFirstName').val(), $('#txLastName').val()], nullHandler,errorHandler);
    });

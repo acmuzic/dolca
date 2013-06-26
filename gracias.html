@@ -12,43 +12,27 @@
 </head>
 <body>
 <div id="fondo">
-    <div id="bienvenidos"></div>
+    <div id="header"></div>
+    <div id="gracias"></div>
     <div id="promo"></div>
     <div id="dolca"></div>
-    <div id="cachorro"></div>
-    <div id="penal"></div>
 </div>
 </body>
 <script>
 $( document ).ready(function() {
-	$('#bienvenidos').slideDown('slow', function() {
+	$('#header').slideDown('slow', function() {
 	// Animation complete.
 		$("#promo").animate({"top": "+=235px"}, "slow", function() {
-			$("#cachorro").animate({"top": "-=388px"}, "slow");
-			$("#penal").animate({"top": "-=388px"}, "slow");
-			$("#dolca").animate({"top": "-=200px"}, "slow");
+			$("#gracias").animate({"top": "-=300px"}, 800);
+			$("#dolca").animate({"top": "-=200px"}, 1200);
 		});
 	});
 });
 
-$('#cachorro').click(function() {
+$('#gracias').click(function() {
   $("body").fadeOut(500, function() {
     // Animation complete.
-	window.location.href="video1.html";
-  });
-});
-
-$('#penal').click(function() {
-  $("body").fadeOut(500, function() {
-    // Animation complete.
-	window.location.href="video2.html";
-  });
-});
-
-$('#dolca').click(function() {
-  $("body").fadeOut(500, function() {
-    // Animation complete.
-	window.location.href="sqltest.html";
+	window.location.href="index.html";
   });
 });
 
