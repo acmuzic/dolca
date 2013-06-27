@@ -54,7 +54,7 @@
 			var ganador = 0;
 		}
 		
-		window.localStorage.setItem(fecha, premios+ganador);
+		window.localStorage.setItem(fecha, parseInt(premios)+parseInt(ganador));
 		premios = window.localStorage.getItem(fecha);
 		alert('ganador: '+ganador);
 		alert('premios: '+premios);
