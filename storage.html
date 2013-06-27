@@ -40,14 +40,38 @@
 	        window.localStorage.setItem(fecha, 0);
 		}
 		
-		alert('items regalados: '+window.localStorage.getItem(fecha));
+		alert('premios regalados: '+window.localStorage.getItem(fecha));
 		//var keyname = window.localStorage.fecha(i);
 		//keyname is now equal to "key"
-        var value = window.localStorage.getItem(fecha);
+        var premios = window.localStorage.getItem(fecha);
         // value is now equal to "value"
         //window.localStorage.removeItem("key");
         //window.localStorage.setItem("key2", "value2");
+		if(premios<25)
+		{
+			var ganador = sortearPremio();
+		}else{
+			var ganador = 0;
+		}
+		
+		window.localStorage.setItem(fecha, premios+ganador);
+		premios = window.localStorage.getItem(fecha);
+		alert('ganador: '+ganador);
+		alert('premios: '+premios);
     }
+	
+	function sortearPremio()
+	{
+	 var rand = Math.floor((Math.random()*10)+1);
+		 if(rand<4)
+		 {
+			 return 0;
+		 }
+		 else
+		 {
+			 return 1;
+		 }
+	}
     </script>
 </head>
 <body>
