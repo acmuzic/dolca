@@ -8,21 +8,17 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="js/jquery-1.9.1.min.js"></script>
-<!--<script type="text/javascript" charset="utf-8" src="cordova-2.7.0.js"></script>-->
-<script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
-<script type="text/javascript" charset="utf-8" src="js/video.js"></script>
+<script type="text/javascript" charset="utf-8" src="cordova-2.7.0.js"></script>
+<script type="text/javascript" charset="utf-8" src="video.js"></script>
 </head>
 <body>
-<div id="hola">hola</div>
 </body>
 <script>
 $('#hola').click(function() {
   $("body").fadeOut(500, function() {
     // Animation complete.
-	window.plugins.videoPlayer.play("file:///android_assets/www/videos/Penales Izquierda - Gana.mp4");
+	window.plugins.videoPlayer.play("file:///android_assets/www/videos/Cachorros Husky - Gana.m4v");
   });
 });
-
-//window.plugins.videoPlayer.play("videos/video.mp4");
 </script>
 </html>
