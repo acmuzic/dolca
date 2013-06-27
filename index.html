@@ -79,7 +79,7 @@ function successCB() {
 	successCBinsert();
 }
 
-// Transaction success callback
+// Transaction success insert
 function successCBinsert() {
 	alert("success insert!");
 	tx.executeSql('INSERT INTO PROMOREDOLCA (id, data) VALUES (1, "First row")');
