@@ -13,9 +13,16 @@
 <script type="text/javascript" charset="utf-8" src="js/video.js"></script>
 </head>
 <body>
+<div id="hola">hola</div>
 </body>
 <script>
-window.plugins.videoPlayer.play("file:///android_assets/www/videos/video.mp4");
+$('#hola').click(function() {
+  $("body").fadeOut(500, function() {
+    // Animation complete.
+	window.plugins.videoPlayer.play("file:///android_assets/www/videos/video.mp4");
+  });
+});
+
 //window.plugins.videoPlayer.play("videos/video.mp4");
 </script>
 </html>
