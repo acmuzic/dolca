@@ -66,8 +66,6 @@ function onDeviceReady() {
 // Populate the database 
 function createPopulateDB(tx) {
 	 tx.executeSql('CREATE TABLE IF NOT EXISTS PROMOREDOLCA (id unique, data)');
-	 tx.executeSql('INSERT INTO PROMOREDOLCA (id, data) VALUES (1, "First row")');
-	 tx.executeSql('INSERT INTO PROMOREDOLCA (id, data) VALUES (2, "Second row")');
 }
 
 // Transaction error callback
@@ -78,6 +76,14 @@ function errorCB(tx, err) {
 // Transaction success callback
 function successCB() {
 	alert("success!");
+	successCBinsert();
+}
+
+// Transaction success callback
+function successCBinsert() {
+	alert("success insert!");
+	tx.executeSql('INSERT INTO PROMOREDOLCA (id, data) VALUES (1, "First row")');
+	tx.executeSql('INSERT INTO PROMOREDOLCA (id, data) VALUES (2, "Second row")');
 }
 </script>
 </html>
