@@ -9,7 +9,29 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="js/jquery-1.9.1.min.js"></script>
 <script type="text/javascript" charset="utf-8" src="cordova-2.7.0.js"></script>
-<script type="text/javascript" charset="utf-8">
+</head>
+<body>
+<div id="fondo">
+    <div id="bienvenidos"></div>
+    <div id="promo"></div>
+    <div id="dolca"></div>
+    <div id="cachorro"></div>
+    <div id="penal"></div>
+</div>
+</body>
+<script>
+$( document ).ready(function() {
+	$('#bienvenidos').slideDown('slow', function() {
+	// Animation complete.
+		$("#promo").animate({"top": "+=235px"}, "slow", function() {
+			$("#cachorro").animate({"top": "-=388px"}, "slow");
+			$("#penal").animate({"top": "-=388px"}, "slow");
+			$("#dolca").animate({"top": "-=200px"}, "slow");
+		});
+	});
+});
+
+/*----------------------  DATOS  -------------------------*/
 
 // Wait for Cordova to load
 //
@@ -72,10 +94,21 @@ function sortearPremio()
 		 return 1;
 	 }
 }
+
+
+$('#cachorro').click(function() {
+  $("body").fadeOut(500, function() {
+    // Animation complete.
+	window.location.href="video1.html";
+  });
+});
+
+$('#penal').click(function() {
+  $("body").fadeOut(500, function() {
+    // Animation complete.
+	window.location.href="video2.html";
+  });
+});
+
 </script>
-</head>
-<body>
-<div id="storage">
-</div>
-</body>
 </html>

@@ -34,66 +34,16 @@ $( document ).ready(function() {
 $('#cachorro').click(function() {
   $("body").fadeOut(500, function() {
     // Animation complete.
-	window.location.href="video1.html";
+	window.location.href="cachorro.html";
   });
 });
 
 $('#penal').click(function() {
   $("body").fadeOut(500, function() {
     // Animation complete.
-	window.location.href="video2.html";
+	window.location.href="penal.html";
   });
 });
 
-/*----------------------  TEST  -------------------------*/
-
-$('#dolca').click(function() {
-  $("body").fadeOut(500, function() {
-    // Animation complete.
-	window.location.href="sqltest.html";
-  });
-});
-
-
-$('#promo').click(function() {
-  $("body").fadeOut(500, function() {
-    // Animation complete.
-	window.location.href="storage.html";
-  });
-});
-
-/*----------------------  BASE DE DATOS  -------------------------*/
-
-// Wait for Cordova to load
-document.addEventListener("deviceready", onDeviceReady, false);
-
-// Cordova is ready
-function onDeviceReady() {
-	var db = window.openDatabase("Database", "1.0", "Dolca", 200000);
-	db.transaction(createPopulateDB, errorCB, successCB);
-}
-
-// Populate the database 
-function createPopulateDB(tx) {
-	 tx.executeSql('CREATE TABLE IF NOT EXISTS PROMOREDOLCA (id unique, data)');
-}
-
-// Transaction error callback
-function errorCB(tx, err) {
-	alert("Error processing SQL: "+err);
-}
-
-// Transaction success callback
-function successCB() {
-	alert("success!");
-	successCBinsert();
-}
-
-// Transaction success insert
-function successCBinsert() {
-	alert("success insert!");
-	tx.executeSql('INSERT INTO PROMOREDOLCA (id, data) VALUES (1, "First row")');
-	tx.executeSql('INSERT INTO PROMOREDOLCA (id, data) VALUES (2, "Second row")');
-}
 </script>
 </html>
