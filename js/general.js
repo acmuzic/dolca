@@ -23,7 +23,7 @@ var fecha=d.getFullYear()+'-'+mes+'-'+dia;
 var ganador = window.localStorage.getItem('ganador');
 
 //Busco la variable cachorro elegido
-var cachorro = window.localStorage.getItem(cachorro);
+var cachorro = window.localStorage.getItem('cachorro');
 
 function chequearPremios() {
 	//Muestro la fecha

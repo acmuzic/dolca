@@ -43,7 +43,7 @@ $( document ).ready(function() {
 /*------------------------ Botones ------------------------*/
 $('#cachorro1').click(function() {
 	//Almaceno el cachorro elegido que define la imagen que cargo en la siguiente pantalla
-	window.localStorage.setItem(cachorro, 1);
+	window.localStorage.setItem('cachorro', 1);
 	$("body").fadeOut(500, function() {
 		// Animation complete > Redirijo a la pantalla siguiente
 		window.location.href="cachorro-premio.html";
@@ -51,7 +51,7 @@ $('#cachorro1').click(function() {
 });
 
 $('#cachorro2').click(function() {
-	window.localStorage.setItem(cachorro, 2);
+	window.localStorage.setItem('cachorro', 2);
 	$("body").fadeOut(500, function() {
 		// Animation complete.
 		window.location.href="cachorro-premio.html";
@@ -59,7 +59,7 @@ $('#cachorro2').click(function() {
 });
 
 $('#cachorro3').click(function() {
-	window.localStorage.setItem(cachorro, 3);
+	window.localStorage.setItem('cachorro', 3);
 	$("body").fadeOut(500, function() {
 		// Animation complete.
 		window.location.href="cachorro-premio.html";
