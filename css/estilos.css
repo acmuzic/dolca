@@ -1,5 +1,7 @@
 @charset "UTF-8";
 /* CSS Document */
+
+/*----------------------------------------- GENERAL ---------------------------------------------*/
 body
 {
 	background-color:#000;
@@ -15,47 +17,37 @@ body
 
 }
 
-#fondo
+#fondo-madera
 {
 	top:0px;
 	left:0px;
-	width:1020px;
+	width:1024px;
 	height:552px;
 	background:url(../imgs/fondo-madera.png) no-repeat;
 	overflow:hidden;
 }
 
-#bienvenidos{
-	position:absolute;
+#fondo-pasto
+{
 	top:0px;
 	left:0px;
-	width:1020px;
-	height:130px;
-	background:url(../imgs/bienvenidos.png) no-repeat;
-	z-index:5;
-	display:none;
+	width:1024px;
+	height:552px;
+	background:url(../imgs/fondo-pasto.png) no-repeat;
 	overflow:hidden;
 }
+
+
 
 #header{
 	position:absolute;
 	top:0px;
 	left:0px;
-	width:1020px;
+	width:1024px;
 	height:130px;
 	background:url(../imgs/header.png) no-repeat;
 	z-index:5;
 	display:none;
-}
-
-#promo{
-	position:absolute;
-	top:-165px;
-	left:420px;
-	width:165px;
-	height:165px;
-	background:url(../imgs/promo-profesionales-redolca.png) no-repeat;
-	z-index:10;
 }
 
 #dolca{
@@ -68,9 +60,33 @@ body
 	z-index:15;
 }
 
-#cachorro{
+#promo-centro{
 	position:absolute;
-	top:522px;
+	top:-165px;
+	left:420px;
+	width:165px;
+	height:165px;
+	background:url(../imgs/promo-profesionales-redolca.png) no-repeat;
+	z-index:10;
+}
+
+
+#promo-izquierda{
+	position:absolute;
+	top:-165px;
+	left:50px;
+	width:165px;
+	height:165px;
+	background:url(../imgs/promo-profesionales-redolca.png) no-repeat;
+	z-index:10;
+}
+
+/*----------------------------------------- INDEX ---------------------------------------------*/
+
+
+#cachorro-index{
+	position:absolute;
+	top:600px;
 	left:30px;
 	width:470px;
 	height:420px;
@@ -78,9 +94,9 @@ body
 	z-index:20;
 }
 
-#penal{
+#penal-index{
 	position:absolute;
-	top:522px;
+	top:600px;
 	left:530px;
 	width:470px;
 	height:420px;
@@ -89,6 +105,192 @@ body
 }
 
 
+
+
+
+
+/*----------------------------------------- CACHORRO ---------------------------------------------*/
+
+#cachorro1{
+	position:absolute;
+	top:600px;
+	left:80px;
+	width:280px;
+	height:382px;
+	background:url(../imgs/cachorro1.png) no-repeat;
+	z-index:20;
+}
+
+#cachorro2{
+	position:absolute;
+	top:600px;
+	left:360px;
+	width:280px;
+	height:382px;
+	background:url(../imgs/cachorro2.png) no-repeat;
+	z-index:20;
+}
+
+#cachorro3{
+	position:absolute;
+	top:600px;
+	left:640px;
+	width:280px;
+	height:382px;
+	background:url(../imgs/cachorro3.png) no-repeat;
+	z-index:20;
+}
+
+#hueso1{
+	position:absolute;
+	top:-200px;
+	left:350px;
+	width:190px;
+	height:115px;
+	background:url(../imgs/hueso1.png) no-repeat;
+	z-index:20;
+}
+
+#hueso2{
+	position:absolute;
+	top:-200px;
+	left:660px;
+	width:130px;
+	height:90px;
+	background:url(../imgs/hueso2.png) no-repeat;
+	z-index:20;
+}
+
+/*----------------------------------------- PREMIO ---------------------------------------------*/
+
+#header-premio{
+	position:absolute;
+	top:0px;
+	left:0px;
+	width:1024px;
+	height:130px;
+	background:url(../imgs/header-premio.png) no-repeat;
+	z-index:5;
+	display:none;
+}
+
+
+
+
+
+/*----------------------------------------- INDEX ---------------------------------------------*/
+
+#manos-cachorro1{
+	position:absolute;
+	top:600px;
+	left:162px;
+	width:700px;
+	height:479px;
+	z-index:50;
+}
+
+#manos-cachorro2{
+	position:absolute;
+	top:600px;
+	left:162px;
+	width:700px;
+	height:479px;
+	z-index:50;
+}
+
+#manos-cachorro3{
+	position:absolute;
+	top:600px;
+	left:162px;
+	width:700px;
+	height:479px;
+	z-index:50;
+}
+
+#cachorros-cachorro1{
+	position:absolute;
+	top:600px;
+	left:0px;
+	width:1024px;
+	height:300px;
+	background:url(../imgs/cachorros-cachorro1.png) no-repeat;
+	z-index:15;
+}
+
+#cachorros-cachorro2{
+	position:absolute;
+	top:600px;
+	left:0px;
+	width:1024px;
+	height:300px;
+	background:url(../imgs/cachorros-cachorro2.png) no-repeat;
+	z-index:15;
+}
+
+#cachorros-cachorro3{
+	position:absolute;
+	top:600px;
+	left:0px;
+	width:1024px;
+	height:300px;
+	background:url(../imgs/cachorros-cachorro3.png) no-repeat;
+	z-index:15;
+}
+
+#ganaste{
+	position:absolute;
+	top:600px;
+	left:132px;
+	width:750px;
+	height:260px;
+	background:url(../imgs/ganaste.png) no-repeat;
+	z-index:50;
+}
+
+#perdiste{
+	position:absolute;
+	top:600px;
+	left:370px;
+	width:260px;
+	height:260px;
+	background:url(../imgs/perdiste.png) no-repeat;
+	z-index:5;
+}
+
+
+/*----------------------------------------- INDEX ---------------------------------------------*/
+
+
+
+/*----------------------------------------- INDEX ---------------------------------------------*/
+
+
+
+/*----------------------------------------- INDEX ---------------------------------------------*/
+
+
+
+/*----------------------------------------- INDEX ---------------------------------------------*/
+
+
+
+/*----------------------------------------- INDEX ---------------------------------------------*/
+
+
+
+/*----------------------------------------- INDEX ---------------------------------------------*/
+
+
+
+/*----------------------------------------- INDEX ---------------------------------------------*/
+
+
+
+/*----------------------------------------- INDEX ---------------------------------------------*/
+
+
+
+/*----------------------------------------- GRACIAS ---------------------------------------------*/
 #gracias{
 	position:absolute;
 	top:550px;

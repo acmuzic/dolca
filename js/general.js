@@ -1,6 +1,7 @@
 // JavaScript Document
 
 //Configuración de la app
+var debug = 1;
 var premios_maximo = 25;
 var porcentaje_ganador = 40;
 
@@ -18,17 +19,23 @@ if(dia<10){
 }
 var fecha=d.getFullYear()+'-'+mes+'-'+dia;
 
+//Busco la variable ganador
+var ganador = window.localStorage.getItem('ganador');
+
+//Busco la variable cachorro elegido
+var cachorro = window.localStorage.getItem(cachorro);
+
 function chequearPremios() {
 	//Muestro la fecha
 	alerta('fecha: '+fecha);
 	
 	//Muestro el estado de la variable ganador al comenzar
-	alerta('ganador onload: '+window.localStorage.getItem(ganador));
+	alerta('ganador onload: '+ganador);
 
 	
 	//Blanqueo el estado de la variable ganador
-	window.localStorage.setItem(ganador, 0);
-	alerta('ganador post chequearPremios(): '+window.localStorage.getItem(ganador));
+	window.localStorage.setItem('ganador', 0);
+	alerta('ganador post chequearPremios(): '+window.localStorage.getItem('ganador'));
 	
 	//Chequeo si no está creado el contador de premios del dia, sino lo creo
 	if(window.localStorage.getItem(fecha) == null)
@@ -43,14 +50,14 @@ function chequearPremios() {
 	//Si ya entregue la cantidad de premios definida, no entrego mas
 	if(premios<premios_maximo)
 	{
-		var ganador = sortearPremio();
+		var gana = sortearPremio();
 	}else{
-		var ganador = 0;
+		var gana = 0;
 	}
-	alerta('ganador: '+ganador);
+	alerta('gana: '+gana);
 	
 	//Almaceno para la fecha la cantidad (1 o 0) de premios entregados hoy
-	window.localStorage.setItem(fecha, parseInt(premios)+parseInt(ganador));
+	window.localStorage.setItem(fecha, parseInt(premios)+parseInt(gana));
 	premios = window.localStorage.getItem(fecha);
 	alerta('premios: '+premios);
 }
@@ -68,19 +75,11 @@ function sortearPremio()
 	 }
 }
 
-
-
 //Modo Debug
-var debug = true;
 function alerta(texto)
 {
-	if(debug)
+	if(debug==1)
 	{
 		alert(texto);
 	}
 }
-
-//No permito scroll del documento
-document.body.addEventListener('touchmove', function(event) {
-    event.preventDefault();
-}, false);

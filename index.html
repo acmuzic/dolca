@@ -8,62 +8,55 @@
 <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1">
 <script src="js/jquery-1.9.1.min.js"></script>
 <script type="text/javascript" charset="utf-8" src="cordova-2.9.0.js"></script>
+<script type="text/javascript" src="js/general.js"></script>
 </head>
 <body>
-<div id="fondo">
-    <div id="bienvenidos"></div>
-    <div id="promo"></div>
+<div id="fondo-madera">
+    <div id="header"><img src="imgs/bienvenidos.png" /></div>
+    <div id="promo-index"></div>
     <div id="dolca"></div>
-    <div id="cachorro"></div>
-    <div id="penal"></div>
+    <div id="cachorro-index"></div>
+    <div id="penal-index"></div>
 </div>
 </body>
-<script src="js/general.js"></script>
 <script>
+/*-------------------------- Onload ---------------------------*/
 $( document ).ready(function() {
-	$('#bienvenidos').slideDown('slow', function() {
+	$('#header').slideDown('slow', function() {
 	// Animation complete.
-		$("#promo").animate({"top": "+=235px"}, "slow", function() {
-			$("#cachorro").animate({"top": "-=388px"}, "slow");
-			$("#penal").animate({"top": "-=388px"}, "slow");
+		$("#promo-index").animate({"top": "+=235px"}, "slow", function() {
+			$("#cachorro-index").animate({"top": "-=470px"}, "slow");
+			$("#penal-index").animate({"top": "-=470px"}, "slow");
 			$("#dolca").animate({"top": "-=200px"}, "slow");
 		});
 	});
 });
 
-$('#cachorro').click(function() {
+
+/*-------------------------- Botones ---------------------------*/
+$('#cachorro-index').click(function() {
   $("body").fadeOut(500, function() {
     // Animation complete.
 	window.location.href="cachorro.html";
   });
 });
 
-$('#penal').click(function() {
+$('#penal-index').click(function() {
   $("body").fadeOut(500, function() {
     // Animation complete.
 	window.location.href="penal.html";
   });
 });
-</script>
-<script>
+
+
 /*----------------------  DATOS  -------------------------*/
 
 // Se carga la página y disparo el chequeador de premios
 document.addEventListener("deviceready", chequearPremios, false);
 
-
-$('#cachorro').click(function() {
-  $("body").fadeOut(500, function() {
-    // Animation complete.
-	window.location.href="video1.html";
-  });
-});
-
-$('#penal').click(function() {
-  $("body").fadeOut(500, function() {
-    // Animation complete.
-	window.location.href="video2.html";
-  });
-});
+//No permito scroll del documento
+document.body.addEventListener('touchmove', function(event) {
+    event.preventDefault();
+}, false);
 </script>
 </html>
