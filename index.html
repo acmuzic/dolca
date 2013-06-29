@@ -18,6 +18,7 @@
     <div id="penal"></div>
 </div>
 </body>
+<script src="js/general.js"></script>
 <script>
 $( document ).ready(function() {
 	$('#bienvenidos').slideDown('slow', function() {
@@ -43,6 +44,26 @@ $('#penal').click(function() {
 	window.location.href="penal.html";
   });
 });
+</script>
+<script>
+/*----------------------  DATOS  -------------------------*/
 
+// Se carga la página y disparo el chequeador de premios
+document.addEventListener("deviceready", chequearPremios, false);
+
+
+$('#cachorro').click(function() {
+  $("body").fadeOut(500, function() {
+    // Animation complete.
+	window.location.href="video1.html";
+  });
+});
+
+$('#penal').click(function() {
+  $("body").fadeOut(500, function() {
+    // Animation complete.
+	window.location.href="video2.html";
+  });
+});
 </script>
 </html>

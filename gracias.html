@@ -35,33 +35,5 @@ $('#gracias').click(function() {
 	window.location.href="index.html";
   });
 });
-
-/*----------------------  BASE DE DATOS  -------------------------*/
-
-// Wait for Cordova to load
-document.addEventListener("deviceready", onDeviceReady, false);
-
-// Cordova is ready
-function onDeviceReady() {
-	var db = window.openDatabase("Database", "1.0", "Dolca", 200000);
-	db.transaction(createPopulateDB, errorCB, successCB);
-}
-
-// Populate the database 
-function createPopulateDB(tx) {
-	 tx.executeSql('CREATE TABLE IF NOT EXISTS PROMOREDOLCA (id unique, data)');
-	 tx.executeSql('INSERT INTO PROMOREDOLCA (id, data) VALUES (1, "First row")');
-	 tx.executeSql('INSERT INTO PROMOREDOLCA (id, data) VALUES (2, "Second row")');
-}
-
-// Transaction error callback
-function errorCB(tx, err) {
-	alert("Error processing SQL: "+err);
-}
-
-// Transaction success callback
-function successCB() {
-	alert("success!");
-}
 </script>
 </html>
