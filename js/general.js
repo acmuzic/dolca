@@ -1,7 +1,7 @@
 // JavaScript Document
 
 //Configuración de la app
-var debug = 1;
+var debug = 0;
 var premios_maximo = 25;
 var porcentaje_ganador = 40;
 
