@@ -22,10 +22,15 @@
     <img id="manos-cachorro3" src="imgs/manos-cachorro3.png">
     <div id="cachorros-cachorro3"></div>
     <div id="ganaste"></div>
+    <div id="estrellas"></div>
     <div id="perdiste"></div>
 </div>
 </body>
 <script>
+
+ganador=1;
+cachorro=1;
+
 $( document ).ready(function() {
 	$('#header-premio').slideDown('slow', function() {
 	// Animation complete.
@@ -40,6 +45,7 @@ $( document ).ready(function() {
 							if(ganador==1)
 							{
 								$("#ganaste").animate({"top": "-=380px"}, 600);
+								$("#estrellas").animate({"top": "-=800px"}, 600);
 							}else{
 								$("#perdiste").animate({"top": "-=320px"}, 600);
 							}
