@@ -174,31 +174,34 @@ body
 	display:none;
 }
 
-
-
-
-
-/*----------------------------------------- INDEX ---------------------------------------------*/
-
-#manos-cachorro1{
+#cachorro1-premio{
 	position:absolute;
-	top:600px;
-	left:162px;
-	width:700px;
-	height:479px;
-	z-index:50;
+	top:0px;
+	left:-280px;
+	width:1024px;
+	height:522px;
+	z-index:3;
 }
 
-#manos-cachorro2{
+#cachorro2-premio{
 	position:absolute;
-	top:600px;
-	left:162px;
-	width:700px;
-	height:479px;
-	z-index:50;
+	top:0px;
+	left:0px;
+	width:1024px;
+	height:522px;
+	z-index:3;
 }
 
-#manos-cachorro3{
+#cachorro3-premio{
+	position:absolute;
+	top:0px;
+	left:280px;
+	width:1024px;
+	height:522px;
+	z-index:3;
+}
+
+#manos{
 	position:absolute;
 	top:600px;
 	left:162px;
@@ -240,7 +243,7 @@ body
 #ganaste{
 	position:absolute;
 	top:600px;
-	left:132px;
+	left:122px;
 	width:750px;
 	height:260px;
 	background:url(../imgs/ganaste.png) no-repeat;
@@ -254,7 +257,7 @@ body
 	width:1024px;
 	height:1015px;
 	background:url(../imgs/estrellas.png) no-repeat;
-	z-index:4;
+	z-index:2;
 }
 
 #perdiste{
