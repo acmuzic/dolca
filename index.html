@@ -7,6 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1">
 <script src="js/jquery-1.9.1.min.js"></script>
+<script src="js/jquery.transit.min.js"></script>
 <script type="text/javascript" charset="utf-8" src="cordova-2.9.0.js"></script>
 <script type="text/javascript" src="js/general.js"></script>
 </head>
@@ -30,6 +31,7 @@ $( document ).ready(function() {
 			$("#dolca").animate({"top": "-=200px"}, "slow");
 		});
 	});
+	chequearPremios();
 });
 
 
@@ -48,15 +50,17 @@ $('#penal-index').click(function() {
   });
 });
 
-
-/*----------------------  DATOS  -------------------------*/
-
-// Se carga la página y disparo el chequeador de premios
-document.addEventListener("deviceready", chequearPremios, false);
-
 //No permito scroll del documento
 document.body.addEventListener('touchmove', function(event) {
     event.preventDefault();
 }, false);
+
+/*
+alert('premios_maximo: '+premios_maximo);
+alert('porcentaje_ganador: '+porcentaje_ganador);
+alert('ganador: '+ganador);
+alert('cachorro: '+cachorro);
+alert('penal: '+penal);
+*/
 </script>
 </html>

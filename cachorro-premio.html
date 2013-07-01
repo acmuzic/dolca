@@ -27,14 +27,21 @@
     <div id="ganaste"></div>
     <div id="estrellas"></div>
     <div id="perdiste"></div>
+    <div id="hueso1"></div>
+    <div id="hueso2"></div>
 </div>
 </body>
 <script>
 /*
 ganador=0;
 cachorro=3;
+alert('ganador cachorro:'+ganador);
 */
 $( document ).ready(function() {
+	
+	$("#hueso1").animate({"top": "+=630px"}, 800);
+	$("#hueso2").animate({"top": "+=650px"}, 800);
+	
 	$('#header-premio').slideDown('slow', function() {
 	// Animation complete.
 		$("#promo-izquierda").animate({"top": "+=165px"}, "slow", function() {

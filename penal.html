@@ -80,6 +80,7 @@ function patear_i()
 	$("#flecha_i").animate({"top": "+=210px"}, 400);
 	$("#flecha_d").animate({"top": "+=210px"}, 400);
 	
+	//audioElementPatea.play();
 	
 	if(ganador==1)
 	{
@@ -90,6 +91,7 @@ function patear_i()
 			$("#estrellas-gol").transition({opacity: 100, rotate: '350deg' }, 400, 'snap');
 			$("#gol").animate({"top": "-=350"}, 400);
 			$("#hinchada").animate({"top": "-=250"}, 600);
+			audioElementGol.play();
 		});
 		//Arquero
 		$("#arquero").attr("src", "imgs/arquero-ataja-d.png");
@@ -105,6 +107,7 @@ function patear_i()
 			$("#pelota").animate({"top": "+=80","left": "-=110"}, 400, function(){
 				//Ataja
 				$("#atajo").animate({"top": "-=350"}, 400);
+				audioElementBu.play();
 			});
 		});
 		//Arquero
@@ -123,6 +126,7 @@ function patear_d()
 	$("#flecha_i").animate({"top": "+=210px"}, 400);
 	$("#flecha_d").animate({"top": "+=210px"}, 400);
 	
+	audioElementPatea.play();
 	
 	if(ganador==1)
 	{
@@ -133,6 +137,7 @@ function patear_d()
 			$("#estrellas-gol").transition({opacity: 100, rotate: '350deg' }, 400, 'snap');
 			$("#gol").animate({"top": "-=350"}, 400);
 			$("#hinchada").animate({"top": "-=250"}, 600);
+			audioElementGol.play();
 		});
 		//Arquero
 		$("#arquero").attr("src", "imgs/arquero-ataja-i.png");
@@ -148,6 +153,7 @@ function patear_d()
 			$("#pelota").animate({"top": "+=90","left": "+=130"}, 400, function(){
 				//Ataja
 				$("#atajo").animate({"top": "-=350"}, 400);
+				audioElementBu.play();
 			});
 		});
 		//Arquero
@@ -159,6 +165,33 @@ function patear_d()
 	}
 }
 
-var ganador = window.localStorage.getItem('ganador');
+/*------------------- AUDIO --------------------*/
+$(document).ready(function() {
+	
+	// Create Media object from src
+	my_media = new Media('audio/estadio.mp3');
+	
+	// Play audio
+	my_media.play();
+	/*
+	var audioElementEstadio = document.createElement('audioElementEstadio');
+	audioElementEstadio.setAttribute('src', 'audio/estadio.mp3');
+	audioElementEstadio.load();
+	audioElementEstadio.play();
+	
+	
+	var audioElementPatea = document.createElement('audioElementPatea');
+	audioElementPatea.setAttribute('src', 'audio/patea.mp3');
+	audioElementPatea.load();
+	
+	var audioElementGol = document.createElement('audioElementGol');
+	audioElementGol.setAttribute('src', 'audio/gol.mp3');
+	audioElementGol.load();
+	
+	var audioElementBu = document.createElement('audioElementBu');
+	audioElementBu.setAttribute('src', 'audio/bu.mp3');
+	audioElementBu.load();
+	*/
+});
 </script>
 </html>

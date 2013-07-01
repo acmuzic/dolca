@@ -54,6 +54,7 @@
     -->
 	<plugin name="VideoPlayer" value="com.phonegap.plugins.video.VideoPlayer"/>
 	<plugin name="Storage" value="org.apache.cordova.Storage" />
+	<plugin name="Media" value="org.apache.cordova.AudioHandler" />
 
     <!-- Define app icon for each platform. -->
     <icon src="imgs/icon.png" />
