@@ -45,6 +45,11 @@ $( document ).ready(function() {
 	});
 });
 
+// Wait for Cordova to load
+//
+document.addEventListener("deviceready", onDeviceReady, false);
+
+
 function onDeviceReady() {
 	alert(getPhoneGapPath());
 	// Create Media object from src
