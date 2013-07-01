@@ -3,111 +3,59 @@
 <head>
 <meta charset="UTF-8">
 <title>Dolca</title>
-<link rel="stylesheet" href="css/jquery.mobile-1.3.1.min.css" />
 <link href="css/estilos.css" rel="stylesheet" type="text/css">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="height=device-height, width=device-width, initial-scale=1">
 <script src="js/jquery-1.9.1.min.js"></script>
-<script type="text/javascript" charset="utf-8" src="cordova-2.7.0.js"></script>
+<script type="text/javascript" charset="utf-8" src="cordova-2.9.0.js"></script>
+<script type="text/javascript" src="js/general.js"></script>
 </head>
 <body>
-<div id="fondo">
-    <div id="bienvenidos"></div>
-    <div id="promo"></div>
+<div id="fondo-cancha">
+    <div id="header"></div>
+    <div id="promo-izquierda"></div>
+    <div id="patea"></div>
+    <div id="arquero"></div>
     <div id="dolca"></div>
-    <div id="cachorro"></div>
-    <div id="penal"></div>
+    <div id="pelota"></div>
+    <div id="flecha_i"></div>
+    <div id="flecha_d"></div>
+    <div id="pelota-sombra"></div>
 </div>
 </body>
 <script>
 $( document ).ready(function() {
-	$('#bienvenidos').slideDown('slow', function() {
+	$('#header').slideDown('slow', function() {
 	// Animation complete.
-		$("#promo").animate({"top": "+=235px"}, "slow", function() {
-			$("#cachorro").animate({"top": "-=388px"}, "slow");
-			$("#penal").animate({"top": "-=388px"}, "slow");
-			$("#dolca").animate({"top": "-=200px"}, "slow");
+		$("#promo-izquierda").animate({"top": "+=165px"}, "slow", function() {
+			$("#patea").animate({"top": "+=500px"}, 200);
+			$("#dolca").animate({"top": "-=200px"}, 200);
+			$("#arquero").animate({"top": "+=480px"}, 1000, function(){			
+				$("#pelota").animate({"top": "-=170px"}, 800);
+				$("#pelota-sombra").animate({"top": "-=170px"}, 800);
+				$("#flecha_i").animate({"top": "-=210px"}, 800);
+				$("#flecha_d").animate({"top": "-=210px"}, 800);
+			});
 		});
 	});
 });
 
-/*----------------------  DATOS  -------------------------*/
-
-// Wait for Cordova to load
-//
-document.addEventListener("deviceready", chequearPremios, false);
-
-// Cordova is ready
-//
-
-//Armo la fecha de hoy
-var d = new Date();
-var mes = d.getMonth()+1;
-if(mes<10)
-{
-	mes='0'+mes;
-}
-var dia = d.getDate();
-if(dia<10)
-{
-	dia = '0'+dia;
-}
-var fecha=d.getFullYear()+'-'+mes+'-'+dia;
-
-alert('fecha: '+fecha);
-
-function chequearPremios() {
-	if(window.localStorage.getItem(fecha) == null)
-	{
-		window.localStorage.setItem(fecha, 0);
-	}
-	
-	alert('premios regalados: '+window.localStorage.getItem(fecha));
-	//var keyname = window.localStorage.fecha(i);
-	//keyname is now equal to "key"
-	var premios = window.localStorage.getItem(fecha);
-	// value is now equal to "value"
-	//window.localStorage.removeItem("key");
-	//window.localStorage.setItem("key2", "value2");
-	if(premios<25)
-	{
-		var ganador = sortearPremio();
-	}else{
-		var ganador = 0;
-	}
-	
-	window.localStorage.setItem(fecha, parseInt(premios)+parseInt(ganador));
-	premios = window.localStorage.getItem(fecha);
-	alert('ganador: '+ganador);
-	alert('premios: '+premios);
-}
-
-function sortearPremio()
-{
- var rand = Math.floor((Math.random()*10)+1);
-	 if(rand<4)
-	 {
-		 return 0;
-	 }
-	 else
-	 {
-		 return 1;
-	 }
-}
-
-
-$('#cachorro').click(function() {
-  $("body").fadeOut(500, function() {
-    // Animation complete.
-	window.location.href="video1.html";
-  });
+/*------------------------ Botones ------------------------*/
+$('#flecha_i').click(function() {
+	//Almaceno el cachorro elegido que define la imagen que cargo en la siguiente pantalla
+	window.localStorage.setItem('penal', 1);
+	$("body").fadeOut(500, function() {
+		// Animation complete > Redirijo a la pantalla siguiente
+		window.location.href="penal-premio.html";
+	});
 });
 
-$('#penal').click(function() {
-  $("body").fadeOut(500, function() {
-    // Animation complete.
-	window.location.href="video2.html";
-  });
+$('#flecha_d').click(function() {
+	window.localStorage.setItem('penal', 2);
+	$("body").fadeOut(500, function() {
+		// Animation complete.
+		window.location.href="penal-premio.html";
+	});
 });
 
 </script>
