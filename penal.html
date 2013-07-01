@@ -30,14 +30,21 @@
 </body>
 <script>
 $( document ).ready(function() {
+	// Create Media object from src
+	my_media = new Media('/android_asset/www/audio/estadio.mp3');
+	
+	// Play audio
+	my_media.play();
+	
+	
 	$('#header').slideDown('slow', function() {
 	// Animation complete.
 		$("#promo-izquierda").animate({"top": "+=165px"}, "slow", function() {
 			$("#patea").animate({"top": "+=500px"}, 200);
-			$("#dolca").animate({"top": "-=230px"}, 200);
+			$("#dolca").animate({"top": "-=200px"}, 200);
 			$("#arquero").animate({"top": "+=480px"}, 1000, function(){			
-				$("#pelota").animate({"top": "-=170px"}, 800);
-				$("#pelota-sombra").animate({"top": "-=170px"}, 800);
+				$("#pelota").animate({"top": "-=150px"}, 800);
+				$("#pelota-sombra").animate({"top": "-=150px"}, 800);
 				$("#flecha_i").animate({"top": "-=210px"}, 400);
 				$("#flecha_d").animate({"top": "-=210px"}, 400);
 			});
@@ -73,6 +80,8 @@ $('#gol').click(function() {
 	});
 });
 
+ganador=0;
+
 function patear_i()
 {
 	//Saco las flechas y la sombrade la pelota
@@ -85,13 +94,13 @@ function patear_i()
 	if(ganador==1)
 	{
 		//Pelota
-		$("#pelota").animate({"width": "-=30","height": "-=30","top": "-=220","left": "-=240"}, 400, function(){
+		$("#pelota").animate({"width": "-=30","height": "-=30","top": "-=240","left": "-=240"}, 400, function(){
 			//Gol
 			$("#estrellas-gol").css({top: 85, left: 115});
 			$("#estrellas-gol").transition({opacity: 100, rotate: '350deg' }, 400, 'snap');
-			$("#gol").animate({"top": "-=350"}, 400);
+			$("#gol").animate({"top": "-=280"}, 400);
 			$("#hinchada").animate({"top": "-=250"}, 600);
-			audioElementGol.play();
+			//audioElementGol.play();
 		});
 		//Arquero
 		$("#arquero").attr("src", "imgs/arquero-ataja-d.png");
@@ -103,7 +112,7 @@ function patear_i()
 	else if(ganador==0)
 	{
 		//Pelota
-		$("#pelota").animate({"width": "-=30","height": "-=30","top": "-=210","left": "-=155"}, 300, function(){
+		$("#pelota").animate({"width": "-=30","height": "-=30","top": "-=230","left": "-=155"}, 300, function(){
 			$("#pelota").animate({"top": "+=80","left": "-=110"}, 400, function(){
 				//Ataja
 				$("#atajo").animate({"top": "-=350"}, 400);
@@ -126,18 +135,18 @@ function patear_d()
 	$("#flecha_i").animate({"top": "+=210px"}, 400);
 	$("#flecha_d").animate({"top": "+=210px"}, 400);
 	
-	audioElementPatea.play();
+	//audioElementPatea.play();
 	
 	if(ganador==1)
 	{
 		//Pelota
-		$("#pelota").animate({"width": "-=30","height": "-=30","top": "-=220","left": "+=265"}, 400, function(){
+		$("#pelota").animate({"width": "-=30","height": "-=30","top": "-=240","left": "+=265"}, 400, function(){
 			//Gol
 			$("#estrellas-gol").css({top: 85, left: 615});
 			$("#estrellas-gol").transition({opacity: 100, rotate: '350deg' }, 400, 'snap');
-			$("#gol").animate({"top": "-=350"}, 400);
+			$("#gol").animate({"top": "-=280"}, 400);
 			$("#hinchada").animate({"top": "-=250"}, 600);
-			audioElementGol.play();
+			//audioElementGol.play();
 		});
 		//Arquero
 		$("#arquero").attr("src", "imgs/arquero-ataja-i.png");
@@ -149,7 +158,7 @@ function patear_d()
 	else if(ganador==0)
 	{
 		//Pelota
-		$("#pelota").animate({"width": "-=30","height": "-=30","top": "-=210","left": "+=155"}, 300, function(){
+		$("#pelota").animate({"width": "-=30","height": "-=30","top": "-=230","left": "+=155"}, 300, function(){
 			$("#pelota").animate({"top": "+=90","left": "+=130"}, 400, function(){
 				//Ataja
 				$("#atajo").animate({"top": "-=350"}, 400);
@@ -166,14 +175,15 @@ function patear_d()
 }
 
 /*------------------- AUDIO --------------------*/
+/*
 $(document).ready(function() {
 	
 	// Create Media object from src
-	my_media = new Media('audio/estadio.mp3');
+	my_media = new Media('/android_asset/www/audio/estadio.mp3');
 	
 	// Play audio
 	my_media.play();
-	/*
+	
 	var audioElementEstadio = document.createElement('audioElementEstadio');
 	audioElementEstadio.setAttribute('src', 'audio/estadio.mp3');
 	audioElementEstadio.load();
@@ -191,7 +201,7 @@ $(document).ready(function() {
 	var audioElementBu = document.createElement('audioElementBu');
 	audioElementBu.setAttribute('src', 'audio/bu.mp3');
 	audioElementBu.load();
-	*/
 });
+*/
 </script>
 </html>

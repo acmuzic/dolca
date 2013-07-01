@@ -7,6 +7,9 @@ body
 	background-color:#000;
 	margin:0;
 	padding:0;
+	overflow:hidden;
+	width:1024px;
+	height:552px;
 }
 
 * {
@@ -24,7 +27,7 @@ body
 	width:1024px;
 	height:552px;
 	background:url(../imgs/fondo-madera.png) no-repeat;
-	overflow:hidden;
+	overflow:hidden; !important
 }
 
 #fondo-pasto
@@ -34,7 +37,7 @@ body
 	width:1024px;
 	height:552px;
 	background:url(../imgs/fondo-pasto.png) no-repeat;
-	overflow:hidden;
+	overflow:hidden; !important
 }
 
 #fondo-cancha
@@ -44,7 +47,7 @@ body
 	width:1024px;
 	height:552px;
 	background:url(../imgs/fondo-cancha.png) no-repeat;
-	overflow:hidden;
+	overflow:hidden; !important
 }
 
 
@@ -343,8 +346,8 @@ body
 
 #gol{
 	position:absolute;
-	top:600px;
-	left:122px;
+	top:640px;
+	left:152px;
 	width:750px;
 	height:260px;
 	background:url(../imgs/gol.png) no-repeat;
