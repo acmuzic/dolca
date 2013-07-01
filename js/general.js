@@ -3,7 +3,7 @@
 //Configuración de la app
 var debug = 1;
 var premios_maximo = 25;
-var porcentaje_ganador = 40;
+var porcentaje_ganador = 50;
 
 //Premios
 

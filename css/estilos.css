@@ -289,7 +289,6 @@ body
 	left:437px;
 	width:150px;
 	height:250px;
-	background:url(../imgs/arquero.png) no-repeat;
 	z-index:10;
 }
 
@@ -299,7 +298,6 @@ body
 	left:477px;
 	width:80px;
 	height:80px;
-	background:url(../imgs/pelota.png) no-repeat;
 	z-index:10;
 }
 
@@ -331,6 +329,46 @@ body
 	height:110px;
 	background:url(../imgs/flecha_d.png) no-repeat;
 	z-index:10;
+}
+
+#estrellas-gol{
+	position:absolute;
+	top:200px;
+	left:700px;
+	width:300px;
+	height:300px;
+	z-index:8;
+	opacity:0;
+}
+
+#gol{
+	position:absolute;
+	top:600px;
+	left:122px;
+	width:750px;
+	height:260px;
+	background:url(../imgs/ganaste.png) no-repeat;
+	z-index:50;
+}
+
+#atajo{
+	position:absolute;
+	top:600px;
+	left:370px;
+	width:260px;
+	height:260px;
+	background:url(../imgs/atajo.png) no-repeat;
+	z-index:50;
+}
+
+#hinchada{
+	position:absolute;
+	top:600px;
+	left:0px;
+	width:1024px;
+	height:350px;
+	background:url(../imgs/hinchada.png) no-repeat;
+	z-index:2;
 }
 
 /*----------------------------------------- INDEX ---------------------------------------------*/

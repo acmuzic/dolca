@@ -7,6 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1">
 <script src="js/jquery-1.9.1.min.js"></script>
+<script src="js/jquery.transit.min.js"></script>
 <script type="text/javascript" charset="utf-8" src="cordova-2.9.0.js"></script>
 <script type="text/javascript" src="js/general.js"></script>
 </head>
@@ -15,12 +16,16 @@
     <div id="header"></div>
     <div id="promo-izquierda"></div>
     <div id="patea"></div>
-    <div id="arquero"></div>
+    <img id="arquero" src="imgs/arquero.png" />
     <div id="dolca"></div>
-    <div id="pelota"></div>
+    <img id="pelota" src="imgs/pelota.png" />
     <div id="flecha_i"></div>
     <div id="flecha_d"></div>
     <div id="pelota-sombra"></div>
+    <div id="gol"></div>
+    <div id="atajo"></div>
+    <div id="hinchada"></div>
+    <img id="estrellas-gol" src="imgs/estrellas-gol.png" />
 </div>
 </body>
 <script>
@@ -29,12 +34,12 @@ $( document ).ready(function() {
 	// Animation complete.
 		$("#promo-izquierda").animate({"top": "+=165px"}, "slow", function() {
 			$("#patea").animate({"top": "+=500px"}, 200);
-			$("#dolca").animate({"top": "-=200px"}, 200);
+			$("#dolca").animate({"top": "-=230px"}, 200);
 			$("#arquero").animate({"top": "+=480px"}, 1000, function(){			
 				$("#pelota").animate({"top": "-=170px"}, 800);
 				$("#pelota-sombra").animate({"top": "-=170px"}, 800);
-				$("#flecha_i").animate({"top": "-=210px"}, 800);
-				$("#flecha_d").animate({"top": "-=210px"}, 800);
+				$("#flecha_i").animate({"top": "-=210px"}, 400);
+				$("#flecha_d").animate({"top": "-=210px"}, 400);
 			});
 		});
 	});
@@ -42,21 +47,118 @@ $( document ).ready(function() {
 
 /*------------------------ Botones ------------------------*/
 $('#flecha_i').click(function() {
-	//Almaceno el cachorro elegido que define la imagen que cargo en la siguiente pantalla
+	//Almaceno el penal elegido
 	window.localStorage.setItem('penal', 1);
-	$("body").fadeOut(500, function() {
-		// Animation complete > Redirijo a la pantalla siguiente
-		window.location.href="penal-premio.html";
-	});
+	patear_i();
 });
 
 $('#flecha_d').click(function() {
+	//Almaceno el penal elegido
 	window.localStorage.setItem('penal', 2);
+	patear_d();
+	
+});
+
+$('#atajo').click(function() {
 	$("body").fadeOut(500, function() {
 		// Animation complete.
-		window.location.href="penal-premio.html";
+		window.location.href="gracias.html";
 	});
 });
 
+$('#gol').click(function() {
+	$("body").fadeOut(500, function() {
+		// Animation complete.
+		window.location.href="gracias.html";
+	});
+});
+
+function patear_i()
+{
+	//Saco las flechas y la sombrade la pelota
+	$("#pelota-sombra").animate({"top": "+=170px"}, 800);
+	$("#flecha_i").animate({"top": "+=210px"}, 400);
+	$("#flecha_d").animate({"top": "+=210px"}, 400);
+	
+	
+	if(ganador==1)
+	{
+		//Pelota
+		$("#pelota").animate({"width": "-=30","height": "-=30","top": "-=220","left": "-=240"}, 400, function(){
+			//Gol
+			$("#estrellas-gol").css({top: 85, left: 115});
+			$("#estrellas-gol").transition({opacity: 100, rotate: '350deg' }, 400, 'snap');
+			$("#gol").animate({"top": "-=350"}, 400);
+			$("#hinchada").animate({"top": "-=250"}, 600);
+		});
+		//Arquero
+		$("#arquero").attr("src", "imgs/arquero-ataja-d.png");
+		$("#arquero").transition({ rotate: '90deg' }, 5, 'snap');
+		$("#arquero").animate({"top": "-=30","left": "+=150"}, 300, function(){
+			$("#arquero").animate({"top": "+=80","left": "+=110"}, 400);
+		});
+	}
+	else if(ganador==0)
+	{
+		//Pelota
+		$("#pelota").animate({"width": "-=30","height": "-=30","top": "-=210","left": "-=155"}, 300, function(){
+			$("#pelota").animate({"top": "+=80","left": "-=110"}, 400, function(){
+				//Ataja
+				$("#atajo").animate({"top": "-=350"}, 400);
+			});
+		});
+		//Arquero
+		$("#arquero").attr("src", "imgs/arquero-ataja-i.png");
+		$("#arquero").transition({ rotate: '-90deg' }, 5, 'snap');
+		$("#arquero").animate({"top": "-=30","left": "-=150"}, 300, function(){
+			$("#arquero").animate({"top": "+=80","left": "-=110"}, 400);
+		});
+	}
+}
+
+function patear_d()
+{
+	//Saco las flechas y la sombrade la pelota
+	$("#pelota-sombra").animate({"top": "+=170px"}, 800);
+	$("#flecha_i").animate({"top": "+=210px"}, 400);
+	$("#flecha_d").animate({"top": "+=210px"}, 400);
+	
+	
+	if(ganador==1)
+	{
+		//Pelota
+		$("#pelota").animate({"width": "-=30","height": "-=30","top": "-=220","left": "+=265"}, 400, function(){
+			//Gol
+			$("#estrellas-gol").css({top: 85, left: 615});
+			$("#estrellas-gol").transition({opacity: 100, rotate: '350deg' }, 400, 'snap');
+			$("#gol").animate({"top": "-=350"}, 400);
+			$("#hinchada").animate({"top": "-=250"}, 600);
+		});
+		//Arquero
+		$("#arquero").attr("src", "imgs/arquero-ataja-i.png");
+		$("#arquero").transition({ rotate: '-90deg' }, 5, 'snap');
+		$("#arquero").animate({"top": "-=30","left": "-=150"}, 300, function(){
+			$("#arquero").animate({"top": "+=80","left": "-=110"}, 400);
+		});
+	}
+	else if(ganador==0)
+	{
+		//Pelota
+		$("#pelota").animate({"width": "-=30","height": "-=30","top": "-=210","left": "+=155"}, 300, function(){
+			$("#pelota").animate({"top": "+=90","left": "+=130"}, 400, function(){
+				//Ataja
+				$("#atajo").animate({"top": "-=350"}, 400);
+			});
+		});
+		//Arquero
+		$("#arquero").attr("src", "imgs/arquero-ataja-d.png");
+		$("#arquero").transition({ rotate: '90deg' }, 5, 'snap');
+		$("#arquero").animate({"top": "-=30","left": "+=150"}, 300, function(){
+			$("#arquero").animate({"top": "+=80","left": "+=110"}, 400);
+		});
+	}
+}
+
+var ganador = window.localStorage.getItem('ganador');
 </script>
 </html>
