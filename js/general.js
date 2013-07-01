@@ -1,7 +1,7 @@
 // JavaScript Document
 
 //Configuración de la app
-var premios_maximo = 25;
+var premios_maximo = 5;
 var porcentaje_ganador = 90;
 
 //Premios
