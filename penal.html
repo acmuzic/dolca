@@ -30,12 +30,13 @@
 </body>
 <script>
 $( document ).ready(function() {
-	// Create Media object from src
-	my_media = new Media('/android_asset/www/audio/estadio.mp3');
 	
+	alert(getPhoneGapPath());
+	
+	// Create Media object from src
+	my_media = new Media(getPhoneGapPath()+'audio/estadio.mp3');
 	// Play audio
 	my_media.play();
-	
 	
 	$('#header').slideDown('slow', function() {
 	// Animation complete.
