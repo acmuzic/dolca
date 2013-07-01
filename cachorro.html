@@ -13,59 +13,133 @@
 </head>
 <body>
 <div id="fondo-pasto">
-    <div id="header"></div>
-    <div id="alza"></div>
+    <div id="header-premio"></div>
     <div id="promo-izquierda"></div>
     <div id="dolca"></div>
-    <div id="cachorro1"></div>
-    <div id="cachorro2"></div>
-    <div id="cachorro3"></div>
+    
+    <!-- cachorros solos -->
+	<img id="cachorro1-premio" src="imgs/cachorro1.png" />
+    <img id="cachorro2-premio" src="imgs/cachorro2.png" />
+    <img id="cachorro3-premio" src="imgs/cachorro3.png" />
+    
+    <img id="manos" src="imgs/manos.png" />
+    
+    <div id="ganaste"></div>
+    <div id="estrellas"></div>
+    <div id="perdiste"></div>
     <div id="hueso1"></div>
     <div id="hueso2"></div>
 </div>
 </body>
 <script>
+/*
+ganador=0;
+cachorro=3;
+alert('ganador cachorro:'+ganador);
+*/
 $( document ).ready(function() {
-	$('#header').slideDown('slow', function() {
+	
+	$("#hueso1").animate({"top": "+=630px"}, 800);
+	$("#hueso2").animate({"top": "+=650px"}, 800);
+	
+	$('#header-premio').slideDown('slow', function() {
 	// Animation complete.
 		$("#promo-izquierda").animate({"top": "+=165px"}, "slow", function() {
-			$("#alza").animate({"top": "-=300px"}, 200);
-			$("#dolca").animate({"top": "-=200px"}, 200);
-			$("#cachorro1").animate({"top": "-=480px"}, 600);
-			$("#cachorro2").animate({"top": "-=480px"}, 800);
-			$("#cachorro3").animate({"top": "-=480px"}, 1000, function(){			
-				$("#hueso1").animate({"top": "+=630px"}, 800);
-				$("#hueso2").animate({"top": "+=650px"}, 800);
-			});
+			$("#dolca").animate({"top": "-=200px"}, 300);
 		});
 	});
 });
 
 /*------------------------ Botones ------------------------*/
-$('#cachorro1').click(function() {
+$('#cachorro1-premio').click(function() {
 	//Almaceno el cachorro elegido que define la imagen que cargo en la siguiente pantalla
 	window.localStorage.setItem('cachorro', 1);
-	$("body").fadeOut(500, function() {
-		// Animation complete > Redirijo a la pantalla siguiente
-		window.location.href="cachorro-premio.html";
+					
+	$("#cachorro1-premio").animate({"left": "+=300"}, 300);
+	$("#cachorro2-premio").animate({"left": "+=220"}, 300);
+	$("#cachorro3-premio").animate({"left": "+=120"}, 300);
+	
+	$("#manos").animate({"top": "-=470px"}, 800, function(){
+		$("#cachorro1-premio").animate({"width": "+=50","height": "+=130","top": "-=155","left": "-=25"}, 800);
+		$("#manos").animate({"width": "+=150","height": "+=102","top": "-=115","left": "-=87"}, 800, function(){
+			if(ganador==1)
+			{
+				$("#ganaste").animate({"top": "-=380px"}, 600, function(){
+					$("#estrellas").transition({ opacity: '100' }, 200, 'snap', function(){
+						$("#estrellas").transition({ rotate: '270deg' }, 1800, 'snap');
+					});
+				});
+			}else{
+				$("#perdiste").animate({"top": "-=320px"}, 600);
+			}
+		});
 	});
 });
 
-$('#cachorro2').click(function() {
+$('#cachorro2-premio').click(function() {
 	window.localStorage.setItem('cachorro', 2);
-	$("body").fadeOut(500, function() {
-		// Animation complete.
-		window.location.href="cachorro-premio.html";
+	$("#cachorro1-premio").animate({"left": "-=80"}, 300);
+	$("#cachorro3-premio").animate({"left": "+=80"}, 300);
+
+	$("#manos").animate({"top": "-=470px"}, 800, function(){
+		$("#cachorro2-premio").animate({"width": "+=50","height": "+=130","top": "-=155","left": "-=25"}, 800);
+		$("#manos").animate({"width": "+=150","height": "+=102","top": "-=115","left": "-=87"}, 800, function(){
+			if(ganador==1)
+			{
+				$("#ganaste").animate({"top": "-=380px"}, 600, function(){
+					$("#estrellas").transition({ opacity: '100' }, 200, 'snap', function(){
+						$("#estrellas").transition({ rotate: '270deg' }, 1800, 'snap');
+					});
+				});
+			}else{
+				$("#perdiste").animate({"top": "-=320px"}, 600);
+			}
+		});
 	});
 });
 
-$('#cachorro3').click(function() {
+$('#cachorro3-premio').click(function() {
 	window.localStorage.setItem('cachorro', 3);
-	$("body").fadeOut(500, function() {
-		// Animation complete.
-		window.location.href="cachorro-premio.html";
+	$("#cachorro1-premio").animate({"left": "-=150"}, 300);
+	$("#cachorro2-premio").animate({"left": "-=230"}, 300);
+	$("#cachorro3-premio").animate({"left": "-=280"}, 300);
+
+	$("#manos").animate({"top": "-=470px"}, 800, function(){
+		$("#cachorro3-premio").animate({"width": "+=50","height": "+=130","top": "-=155","left": "-=25"}, 800);
+		$("#manos").animate({"width": "+=150","height": "+=102","top": "-=115","left": "-=87"}, 800, function(){
+			if(ganador==1)
+			{
+				$("#ganaste").animate({"top": "-=380px"}, 600, function(){
+					$("#estrellas").transition({ opacity: '100' }, 200, 'snap', function(){
+						$("#estrellas").transition({ rotate: '270deg' }, 1800, 'snap');
+					});
+				});
+			}else{
+				$("#perdiste").animate({"top": "-=320px"}, 600);
+			}
+		});
 	});
 });
 
+$('#ganaste').click(function() {
+	$("body").fadeOut(500, function() {
+		// Animation complete.
+		window.location.href="gracias.html";
+	});
+});
+
+$('#perdiste').click(function() {
+	$("body").fadeOut(500, function() {
+		// Animation complete.
+		window.location.href="gracias.html";
+	});
+});
+
+$('#manos').click(function() {
+	$("body").fadeOut(500, function() {
+		// Animation complete.
+		window.location.href="gracias.html";
+	});
+});
 </script>
 </html>

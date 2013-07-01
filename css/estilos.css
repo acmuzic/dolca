@@ -161,7 +161,7 @@ body
 	width:190px;
 	height:115px;
 	background:url(../imgs/hueso1.png) no-repeat;
-	z-index:20;
+	z-index:1;
 }
 
 #hueso2{
@@ -171,7 +171,7 @@ body
 	width:130px;
 	height:90px;
 	background:url(../imgs/hueso2.png) no-repeat;
-	z-index:20;
+	z-index:1;
 }
 
 /*----------------------------------------- CACHORRO PREMIO ---------------------------------------------*/
@@ -190,8 +190,8 @@ body
 #cachorro1-premio{
 	position:absolute;
 	top:0px;
-	left:-280px;
-	width:1024px;
+	left:100px;
+	width:200px;
 	height:522px;
 	z-index:3;
 }
@@ -199,8 +199,8 @@ body
 #cachorro2-premio{
 	position:absolute;
 	top:0px;
-	left:0px;
-	width:1024px;
+	left:395px;
+	width:200px;
 	height:522px;
 	z-index:3;
 }
@@ -208,8 +208,8 @@ body
 #cachorro3-premio{
 	position:absolute;
 	top:0px;
-	left:280px;
-	width:1024px;
+	left:680px;
+	width:200px;
 	height:522px;
 	z-index:3;
 }
