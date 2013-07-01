@@ -59,9 +59,10 @@ $( document ).ready(function() {
 						$("#manos").animate({"width": "+=150","height": "+=102","top": "-=115","left": "-=87"}, 800, function(){
 							if(ganador==1)
 							{
-								$("#ganaste").animate({"top": "-=380px"}, 600);
-								$("#estrellas").animate({"top": "-=800px"}, 600, function(){
-									$("#estrellas").transition({ rotate: '270deg' }, 1200, 'snap');
+								$("#ganaste").animate({"top": "-=380px"}, 600, function(){
+									$("#estrellas").transition({ opacity: '100' }, 200, 'snap', function(){
+										$("#estrellas").transition({ rotate: '270deg' }, 1800, 'snap');
+									});
 								});
 							}else{
 								$("#perdiste").animate({"top": "-=320px"}, 600);
@@ -81,9 +82,10 @@ $( document ).ready(function() {
 						$("#manos").animate({"width": "+=150","height": "+=102","top": "-=115","left": "-=87"}, 800, function(){
 							if(ganador==1)
 							{
-								$("#ganaste").animate({"top": "-=380px"}, 600);
-								$("#estrellas").animate({"top": "-=800px"}, 600, function(){
-									$("#estrellas").transition({ rotate: '270deg' }, 1200, 'snap');
+								$("#ganaste").animate({"top": "-=380px"}, 600, function(){
+									$("#estrellas").transition({ opacity: '100' }, 200, 'snap', function(){
+										$("#estrellas").transition({ rotate: '270deg' }, 1800, 'snap');
+									});
 								});
 							}else{
 								$("#perdiste").animate({"top": "-=320px"}, 600);
@@ -103,9 +105,10 @@ $( document ).ready(function() {
 						$("#manos").animate({"width": "+=150","height": "+=102","top": "-=115","left": "-=87"}, 800, function(){
 							if(ganador==1)
 							{
-								$("#ganaste").animate({"top": "-=380px"}, 600);
-								$("#estrellas").animate({"top": "-=800px"}, 600, function(){
-									$("#estrellas").transition({ rotate: '270deg' }, 1200, 'snap');
+								$("#ganaste").animate({"top": "-=380px"}, 600, function(){
+									$("#estrellas").transition({ opacity: '100' }, 200, 'snap', function(){
+										$("#estrellas").transition({ rotate: '270deg' }, 1800, 'snap');
+									});
 								});
 							}else{
 								$("#perdiste").animate({"top": "-=320px"}, 600);

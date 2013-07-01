@@ -43,12 +43,7 @@ $( document ).ready(function() {
 			});
 		});
 	});
-	
-	// Create Media object from src
-	my_media = new Media(getPhoneGapPath()+'audio/estadio.mp3');
-	// Play audio
-	my_media.play();
-	
+	playAudio('/android_asset/www/audio/estadio.mp3');
 });
 
 /*------------------------ Botones ------------------------*/
@@ -56,13 +51,14 @@ $('#flecha_i').click(function() {
 	//Almaceno el penal elegido
 	window.localStorage.setItem('penal', 1);
 	patear_i();
+	playAudio('/android_asset/www/audio/patea.mp3');
 });
 
 $('#flecha_d').click(function() {
 	//Almaceno el penal elegido
 	window.localStorage.setItem('penal', 2);
 	patear_d();
-	
+	playAudio('/android_asset/www/audio/patea.mp3');
 });
 
 $('#atajo').click(function() {
@@ -102,10 +98,11 @@ function patear_i()
 		});
 		//Arquero
 		$("#arquero").attr("src", "imgs/arquero-ataja-d.png");
-		$("#arquero").transition({ rotate: '90deg' }, 5, 'snap');
+		$("#arquero").transition({ rotate: '45deg' }, 5, 'snap');
 		$("#arquero").animate({"top": "-=30","left": "+=150"}, 300, function(){
 			$("#arquero").animate({"top": "+=80","left": "+=110"}, 400);
 		});
+		$("#arquero").transition({ rotate: '90deg' }, 5, 'snap');
 	}
 	else if(ganador==0)
 	{
@@ -119,10 +116,11 @@ function patear_i()
 		});
 		//Arquero
 		$("#arquero").attr("src", "imgs/arquero-ataja-i.png");
-		$("#arquero").transition({ rotate: '-90deg' }, 5, 'snap');
+		$("#arquero").transition({ rotate: '-45deg' }, 5, 'snap');
 		$("#arquero").animate({"top": "-=30","left": "-=150"}, 300, function(){
 			$("#arquero").animate({"top": "+=80","left": "-=110"}, 400);
 		});
+		$("#arquero").transition({ rotate: '-90deg' }, 5, 'snap');
 	}
 }
 
@@ -148,10 +146,11 @@ function patear_d()
 		});
 		//Arquero
 		$("#arquero").attr("src", "imgs/arquero-ataja-i.png");
-		$("#arquero").transition({ rotate: '-90deg' }, 5, 'snap');
+		$("#arquero").transition({ rotate: '-45deg' }, 5, 'snap');
 		$("#arquero").animate({"top": "-=30","left": "-=150"}, 300, function(){
 			$("#arquero").animate({"top": "+=80","left": "-=110"}, 400);
 		});
+		$("#arquero").transition({ rotate: '-90deg' }, 5, 'snap');
 	}
 	else if(ganador==0)
 	{
@@ -165,10 +164,11 @@ function patear_d()
 		});
 		//Arquero
 		$("#arquero").attr("src", "imgs/arquero-ataja-d.png");
-		$("#arquero").transition({ rotate: '90deg' }, 5, 'snap');
+		$("#arquero").transition({ rotate: '45deg' }, 5, 'snap');
 		$("#arquero").animate({"top": "-=30","left": "+=150"}, 300, function(){
 			$("#arquero").animate({"top": "+=80","left": "+=110"}, 400);
 		});
+		$("#arquero").transition({ rotate: '90deg' }, 5, 'snap');
 	}
 }
 
