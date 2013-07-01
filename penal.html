@@ -43,20 +43,13 @@ $( document ).ready(function() {
 			});
 		});
 	});
-});
-
-// Wait for Cordova to load
-//
-document.addEventListener("deviceready", onDeviceReady, false);
-
-
-function onDeviceReady() {
-	alert(getPhoneGapPath());
+	
 	// Create Media object from src
 	my_media = new Media(getPhoneGapPath()+'audio/estadio.mp3');
 	// Play audio
 	my_media.play();
-}
+	
+});
 
 /*------------------------ Botones ------------------------*/
 $('#flecha_i').click(function() {
