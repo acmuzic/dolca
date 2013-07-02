@@ -13,9 +13,10 @@
 </head>
 <body>
 <div id="fondo-pasto">
-    <div id="header-premio"></div>
+    <div id="header"></div>
     <div id="promo-izquierda"></div>
     <div id="dolca"></div>
+    <div id="alza"></div>
     
     <!-- cachorros solos -->
 	<img id="cachorro1-premio" src="imgs/cachorro1.png" />
@@ -45,10 +46,12 @@ $( document ).ready(function() {
 	$("#hueso1").animate({"top": "+=630px"}, 800);
 	$("#hueso2").animate({"top": "+=650px"}, 800);
 	
-	$('#header-premio').slideDown('slow', function() {
+	$('#header').slideDown('slow', function() {
 	// Animation complete.
 		$("#promo-izquierda").animate({"top": "+=165px"}, "slow", function() {
-			$("#dolca").animate({"top": "-=200px"}, 300);
+			$("#dolca").animate({"top": "-=200px"}, 300, function(){
+				$("#alza").animate({"top": "+=100px"}, 300);
+			});
 		});
 	});
 });
@@ -57,10 +60,17 @@ $( document ).ready(function() {
 $('#cachorro1-premio').click(function() {
 	//Almaceno el cachorro elegido que define la imagen que cargo en la siguiente pantalla
 	window.localStorage.setItem('cachorro', 1);
-					
+	
 	$("#cachorro1-premio").animate({"left": "+=300"}, 300);
 	$("#cachorro2-premio").animate({"left": "+=230"}, 300);
-	$("#cachorro3-premio").animate({"left": "+=140"}, 300);
+	$("#cachorro3-premio").animate({"left": "+=140"}, 300, function(){
+		$("#alza").animate({"top": "-=100px"}, 200, function(){
+			$("#header").transition({ x: '-270', y: '-60',rotate: '-10deg' }, 600, 'snap');
+		});
+	
+	});
+			
+	
 	
 	$("#manos").animate({"top": "-=470px"}, 800, function(){
 		$("#cachorro1-premio").animate({"top": "-=145"}, 800);
@@ -80,7 +90,12 @@ $('#cachorro1-premio').click(function() {
 $('#cachorro2-premio').click(function() {
 	window.localStorage.setItem('cachorro', 2);
 	$("#cachorro1-premio").animate({"left": "-=80"}, 300);
-	$("#cachorro3-premio").animate({"left": "+=80"}, 300);
+	$("#cachorro3-premio").animate({"left": "+=80"}, 300, function(){
+		$("#alza").animate({"top": "-=100px"}, 200, function(){
+			$("#header").transition({ x: '-270', y: '-60',rotate: '-10deg' }, 600, 'snap');
+		});
+	
+	});
 
 	$("#manos").animate({"top": "-=470px"}, 800, function(){
 		$("#cachorro2-premio").animate({"top": "-=145"}, 800);
@@ -101,7 +116,12 @@ $('#cachorro3-premio').click(function() {
 	window.localStorage.setItem('cachorro', 3);
 	$("#cachorro1-premio").animate({"left": "-=120"}, 300);
 	$("#cachorro2-premio").animate({"left": "-=220"}, 300);
-	$("#cachorro3-premio").animate({"left": "-=280"}, 300);
+	$("#cachorro3-premio").animate({"left": "-=280"}, 300, function(){
+		$("#alza").animate({"top": "-=100px"}, 200, function(){
+			$("#header").transition({ x: '-270', y: '-60',rotate: '-10deg' }, 600, 'snap');
+		});
+	
+	});
 
 	$("#manos").animate({"top": "-=470px"}, 800, function(){
 		$("#cachorro3-premio").animate({"top": "-=145"}, 800);
