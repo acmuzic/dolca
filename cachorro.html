@@ -25,6 +25,7 @@
     <img id="manos" src="imgs/manos.png" />
     
     <div id="ganaste"></div>
+    <div id="regalo"></div>
     <div id="estrellas"></div>
     <div id="perdiste"></div>
     <div id="hueso1"></div>
@@ -32,8 +33,10 @@
 </div>
 </body>
 <script>
+
+
 /*
-ganador=0;
+ganador=1;
 cachorro=3;
 alert('ganador cachorro:'+ganador);
 */
@@ -56,26 +59,21 @@ $('#cachorro1-premio').click(function() {
 	window.localStorage.setItem('cachorro', 1);
 					
 	$("#cachorro1-premio").animate({"left": "+=300"}, 300);
-	$("#cachorro2-premio").animate({"left": "+=220"}, 300);
-	$("#cachorro3-premio").animate({"left": "+=120"}, 300);
+	$("#cachorro2-premio").animate({"left": "+=230"}, 300);
+	$("#cachorro3-premio").animate({"left": "+=140"}, 300);
 	
 	$("#manos").animate({"top": "-=470px"}, 800, function(){
-		$("#cachorro1-premio").animate({"width": "+=50","height": "+=130","top": "-=155","left": "-=25"}, 800);
-		$("#manos").animate({"width": "+=150","height": "+=102","top": "-=115","left": "-=87"}, 800, function(){
-			if(ganador==1)
-			{
-				$("#ganaste").animate({"top": "-=380px"}, 600, function(){
-					/*
-					$("#estrellas").transition({ opacity: '100' }, 200, 'snap', function(){
-						$("#estrellas").transition({ rotate: '270deg' }, 1800, 'snap');
-					});
-					*/
-					$("#estrellas").transition({ opacity: '100', rotate: '270deg' }, 1800, 'snap');
-				});
-			}else{
-				$("#perdiste").animate({"top": "-=320px"}, 600);
-			}
-		});
+		$("#cachorro1-premio").animate({"top": "-=145"}, 800);
+		$("#manos").animate({"top": "-=145"}, 800);
+		if(ganador==1)
+		{
+			$("#estrellas").transition({ opacity: '100', rotate: '270deg' }, 1800, 'snap');
+			$("#regalo").transition({ opacity: '100'}, 1800, 'snap',function(){
+				$("#ganaste").animate({"top": "-=220px"}, 200);
+			});
+		}else{
+			$("#perdiste").animate({"top": "-=320px"}, 600);
+		}
 	});
 });
 
@@ -85,48 +83,38 @@ $('#cachorro2-premio').click(function() {
 	$("#cachorro3-premio").animate({"left": "+=80"}, 300);
 
 	$("#manos").animate({"top": "-=470px"}, 800, function(){
-		$("#cachorro2-premio").animate({"width": "+=50","height": "+=130","top": "-=155","left": "-=25"}, 800);
-		$("#manos").animate({"width": "+=150","height": "+=102","top": "-=115","left": "-=87"}, 800, function(){
-			if(ganador==1)
-			{
-				$("#ganaste").animate({"top": "-=380px"}, 600, function(){
-					/*
-					$("#estrellas").transition({ opacity: '100' }, 200, 'snap', function(){
-						$("#estrellas").transition({ rotate: '270deg' }, 1800, 'snap');
-					});
-					*/
-					$("#estrellas").transition({ opacity: '100', rotate: '270deg' }, 1800, 'snap');
-				});
-			}else{
-				$("#perdiste").animate({"top": "-=320px"}, 600);
-			}
-		});
+		$("#cachorro2-premio").animate({"top": "-=145"}, 800);
+		$("#manos").animate({"top": "-=145"}, 800);
+		if(ganador==1)
+		{
+			$("#estrellas").transition({ opacity: '100', rotate: '270deg' }, 1800, 'snap');
+			$("#regalo").transition({ opacity: '100'}, 1800, 'snap',function(){
+				$("#ganaste").animate({"top": "-=220px"}, 200);
+			});
+		}else{
+			$("#perdiste").animate({"top": "-=320px"}, 600);
+		}
 	});
 });
 
 $('#cachorro3-premio').click(function() {
 	window.localStorage.setItem('cachorro', 3);
-	$("#cachorro1-premio").animate({"left": "-=150"}, 300);
-	$("#cachorro2-premio").animate({"left": "-=230"}, 300);
+	$("#cachorro1-premio").animate({"left": "-=120"}, 300);
+	$("#cachorro2-premio").animate({"left": "-=220"}, 300);
 	$("#cachorro3-premio").animate({"left": "-=280"}, 300);
 
 	$("#manos").animate({"top": "-=470px"}, 800, function(){
-		$("#cachorro3-premio").animate({"width": "+=50","height": "+=130","top": "-=155","left": "-=25"}, 800);
-		$("#manos").animate({"width": "+=150","height": "+=102","top": "-=115","left": "-=87"}, 800, function(){
-			if(ganador==1)
-			{
-				$("#ganaste").animate({"top": "-=380px"}, 600, function(){
-					/*
-					$("#estrellas").transition({ opacity: '100' }, 200, 'snap', function(){
-						$("#estrellas").transition({ rotate: '270deg' }, 1800, 'snap');
-					});
-					*/
-					$("#estrellas").transition({ opacity: '100', rotate: '270deg' }, 1800, 'snap');
-				});
-			}else{
-				$("#perdiste").animate({"top": "-=320px"}, 600);
-			}
-		});
+		$("#cachorro3-premio").animate({"top": "-=145"}, 800);
+		$("#manos").animate({"top": "-=145"}, 800);
+		if(ganador==1)
+		{
+			$("#estrellas").transition({ opacity: '100', rotate: '270deg' }, 1800, 'snap');
+			$("#regalo").transition({ opacity: '100'}, 1800, 'snap',function(){
+				$("#ganaste").animate({"top": "-=220px"}, 200);
+			});
+		}else{
+			$("#perdiste").animate({"top": "-=320px"}, 600);
+		}
 	});
 });
 

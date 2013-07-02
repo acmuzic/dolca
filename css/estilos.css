@@ -193,7 +193,7 @@ body
 	left:100px;
 	width:200px;
 	height:522px;
-	z-index:3;
+	z-index:30;
 }
 
 #cachorro2-premio{
@@ -202,7 +202,7 @@ body
 	left:395px;
 	width:200px;
 	height:522px;
-	z-index:3;
+	z-index:30;
 }
 
 #cachorro3-premio{
@@ -211,15 +211,15 @@ body
 	left:680px;
 	width:200px;
 	height:522px;
-	z-index:3;
+	z-index:30;
 }
 
 #manos{
 	position:absolute;
-	top:600px;
-	left:162px;
-	width:700px;
-	height:479px;
+	top:590px;
+	left:87px;
+	width:850px;
+	height:581px;
 	z-index:50;
 }
 
@@ -253,10 +253,21 @@ body
 	z-index:3;
 }
 
+#regalo{
+	position:absolute;
+	top:260px;
+	left:0px;
+	width:1024px;
+	height:180px;
+	background:url(../imgs/regalo.png) no-repeat;
+	z-index:25;
+	opacity:0;
+}
+
 #ganaste{
 	position:absolute;
 	top:600px;
-	left:122px;
+	left:137px;
 	width:750px;
 	height:260px;
 	background:url(../imgs/ganaste.png) no-repeat;
@@ -277,11 +288,11 @@ body
 #perdiste{
 	position:absolute;
 	top:600px;
-	left:370px;
+	left:382px;
 	width:260px;
 	height:260px;
 	background:url(../imgs/perdiste.png) no-repeat;
-	z-index:5;
+	z-index:25;
 }
 
 
