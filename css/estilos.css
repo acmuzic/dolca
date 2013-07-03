@@ -33,6 +33,7 @@ body
 
 #fondo-madera
 {
+	position:absolute;
 	top:0px;
 	left:0px;
 	width:1024px;
@@ -43,6 +44,7 @@ body
 
 #fondo-pasto
 {
+	position:absolute;
 	top:0px;
 	left:0px;
 	width:1024px;
@@ -53,6 +55,7 @@ body
 
 #fondo-cancha
 {
+	position:absolute;
 	top:0px;
 	left:0px;
 	width:1024px;
