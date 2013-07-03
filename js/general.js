@@ -83,6 +83,14 @@ function sortearPremio()
 		return 0;
 	}
 }
+function blanquearPremios()
+{
+	if(confirm('Está a punto de blanquear los '+window.localStorage.getItem(fecha)+' premios entregados hoy ('+fecha+'). \n ¿Está seguro?'))
+	{
+		window.localStorage.setItem(fecha, 0);
+		alert('Los premios para el día '+fecha+' se blanquearon');
+	}
+}
 
 function getPhoneGapPath() {
     var path = window.location.pathname;

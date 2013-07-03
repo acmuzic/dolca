@@ -20,6 +20,17 @@ body
 
 }
 
+#blanquear
+{
+	position:absolute;
+	top:0px;
+	left:1000px;
+	width:24px;
+	height:24px;
+	/*background-color:#0C0;*/
+	z-index:50;
+}
+
 #fondo-madera
 {
 	top:0px;

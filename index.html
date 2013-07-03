@@ -13,6 +13,7 @@
 </head>
 <body>
 <div id="fondo-madera">
+    <div id="blanquear"></div>
     <div id="header"><img src="imgs/bienvenidos.png" /></div>
     <div id="promo-centro"></div>
     <div id="dolca"></div>
@@ -25,10 +26,12 @@
 $( document ).ready(function() {
 	$('#header').slideDown('slow', function() {
 	// Animation complete.
-		$("#promo-centro").animate({"top": "+=235px"}, "slow", function() {
-			$("#cachorro-index").animate({"top": "-=470px"}, "slow");
-			$("#penal-index").animate({"top": "-=470px"}, "slow");
-			$("#dolca").animate({"top": "-=200px"}, "slow");
+		$("#promo-centro").animate({"top": "+=235px"}, "slow", function(){
+			$("#dolca").animate({"top": "-=200px"}, "slow", function(){
+				$("#cachorro-index").animate({"top": "-=470px"}, "slow", function(){
+					$("#penal-index").animate({"top": "-=470px"}, "slow");
+				});
+			});
 		});
 	});
 	chequearPremios();
@@ -36,6 +39,11 @@ $( document ).ready(function() {
 
 
 /*-------------------------- Botones ---------------------------*/
+$('#blanquear').click(function() {
+  blanquearPremios();
+});
+
+
 $('#cachorro-index').click(function() {
   $("body").fadeOut(500, function() {
     // Animation complete.
